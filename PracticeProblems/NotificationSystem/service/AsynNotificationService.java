@@ -1,7 +1,6 @@
-package NotificationSystem.api;
+package NotificationSystem.service;
 
 import NotificationSystem.Dto.Notification;
-import NotificationSystem.service.NotificationDispatcher;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

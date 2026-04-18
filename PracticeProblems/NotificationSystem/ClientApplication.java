@@ -3,7 +3,7 @@ package NotificationSystem;
 import NotificationSystem.Dto.ChannelType;
 import NotificationSystem.Dto.Notification;
 import NotificationSystem.Dto.UserPreference;
-import NotificationSystem.api.NotificationService;
+import NotificationSystem.service.NotificationService;
 import NotificationSystem.service.NotificationDispatcher;
 import NotificationSystem.service.UserPreferenceService;
 

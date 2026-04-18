@@ -1,7 +1,6 @@
-package NotificationSystem.api;
+package NotificationSystem.service;
 
 import NotificationSystem.Dto.Notification;
-import NotificationSystem.service.NotificationDispatcher;
 
 public class NotificationService {
     private final NotificationDispatcher notificationDispatcher;

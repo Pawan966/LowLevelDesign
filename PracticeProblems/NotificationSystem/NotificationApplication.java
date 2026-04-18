@@ -1,7 +1,7 @@
 package NotificationSystem;
 
 import NotificationSystem.Dto.Notification;
-import NotificationSystem.api.NotificationService;
+import NotificationSystem.service.NotificationService;
 
 public class NotificationApplication {
     private final NotificationService notificationService;

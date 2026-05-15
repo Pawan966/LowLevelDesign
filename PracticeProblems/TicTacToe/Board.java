@@ -17,4 +17,12 @@ public class Board {
             }
         }
     }
+
+    public boolean placePiece(Player player, int row, int col) {
+        if (board[row][col] == '.') {
+            board[row][col] = player.piece == Piece.X ? 'X' : 'O';
+            return true;
+        }
+        return false;
+    }
 }

@@ -24,7 +24,7 @@ public class Game {
                 int row = num / board.size;
                 int col = num % board.size;
 
-                if(placePiece(currentPlayer, row, col)) {
+                if(board.placePiece(currentPlayer, row, col)) {
                     break;
                 }
                 count++;
@@ -46,14 +46,6 @@ public class Game {
         } else {
             System.out.println("Draw");
         }
-    }
-
-    private boolean placePiece(Player player, int row, int col) {
-        if (board.board[row][col] == '.') {
-            board.board[row][col] = player.piece == Piece.X ? 'X' : 'O';
-            return true;
-        }
-        return false;
     }
 
     private boolean isWinner(Player player) {

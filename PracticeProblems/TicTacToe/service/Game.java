@@ -1,9 +1,13 @@
-package TicTacToe;
+package TicTacToe.service;
+
+import TicTacToe.Dto.Board;
+import TicTacToe.Dto.Piece;
+import TicTacToe.Dto.Player;
 
 public class Game {
-    Board board;
-    Player player1;
-    Player player2;
+    private final Board board;
+    private final Player player1;
+    private final Player player2;
 
     public Game(int size) {
         this.board = new Board(size);
@@ -15,14 +19,14 @@ public class Game {
         Player currentPlayer = player1;
         Player winner = null;
 
-        int min = 0, max = board.size * board.size;
+        int min = 0, max = board.getSize() * board.getSize();
         while (winner == null) {
             int count = 0;
 
             while(count < max) {
                 int num = (int) (Math.random() * (max - min) + min);
-                int row = num / board.size;
-                int col = num % board.size;
+                int row = num / board.getSize();
+                int col = num % board.getSize();
 
                 if(board.placePiece(currentPlayer, row, col)) {
                     break;
@@ -42,7 +46,7 @@ public class Game {
         }
 
         if(winner != null) {
-            System.out.println("Winner is: " + winner.name);
+            System.out.println("Winner is: " + winner.getName());
         } else {
             System.out.println("Draw");
         }
@@ -50,10 +54,10 @@ public class Game {
 
     private boolean isWinner(Player player) {
         // check row
-        for (int i = 0; i < board.size; i++) {
+        for (int i = 0; i < board.getSize(); i++) {
             boolean isWinner = true;
-            for (int j = 0; j < board.size; j++) {
-                if (board.board[i][j] != (player.piece == Piece.X ? 'X' : 'O')) {
+            for (int j = 0; j < board.getSize(); j++) {
+                if (board.getBoard()[i][j] != (player.getPiece() == Piece.X ? 'X' : 'O')) {
                     isWinner = false;
                     break;
                 }
@@ -64,10 +68,10 @@ public class Game {
         }
 
         // check col
-        for (int j = 0; j < board.size; j++) {
+        for (int j = 0; j < board.getSize(); j++) {
             boolean isWinner = true;
-            for (int i = 0; i < board.size; i++) {
-                if (board.board[i][j] != (player.piece == Piece.X ? 'X' : 'O')) {
+            for (int i = 0; i < board.getSize(); i++) {
+                if (board.getBoard()[i][j] != (player.getPiece() == Piece.X ? 'X' : 'O')) {
                     isWinner = false;
                     break;
                 }
@@ -79,8 +83,8 @@ public class Game {
 
         // check diagonal
         boolean isWinner = true;
-        for (int i = 0; i < board.size; i++) {
-            if (board.board[i][i] != (player.piece == Piece.X ? 'X' : 'O')) {
+        for (int i = 0; i < board.getSize(); i++) {
+            if (board.getBoard()[i][i] != (player.getPiece() == Piece.X ? 'X' : 'O')) {
                 isWinner = false;
                 break;
             }
@@ -91,8 +95,8 @@ public class Game {
 
         // check other diagonal
         isWinner = true;
-        for (int i = 0; i < board.size; i++) {
-            if (board.board[i][board.size - 1 - i] != (player.piece == Piece.X ? 'X' : 'O')) {
+        for (int i = 0; i < board.getSize(); i++) {
+            if (board.getBoard()[i][board.getSize() - 1 - i] != (player.getPiece() == Piece.X ? 'X' : 'O')) {
                 isWinner = false;
                 break;
             }

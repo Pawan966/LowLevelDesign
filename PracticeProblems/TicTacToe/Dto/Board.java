@@ -1,8 +1,8 @@
-package TicTacToe;
+package TicTacToe.Dto;
 
 public class Board {
-    int size;
-    char[][] board;
+    private final int size;
+    private final char[][] board;
 
     public Board(int size) {
         this.size = size;
@@ -20,9 +20,17 @@ public class Board {
 
     public boolean placePiece(Player player, int row, int col) {
         if (board[row][col] == '.') {
-            board[row][col] = player.piece == Piece.X ? 'X' : 'O';
+            board[row][col] = player.getPiece() == Piece.X ? 'X' : 'O';
             return true;
         }
         return false;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public char[][] getBoard() {
+        return board;
     }
 }

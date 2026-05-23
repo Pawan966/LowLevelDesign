@@ -72,4 +72,8 @@ public class ParkingLotService {
         }
         throw new ParkingException("No available parking spot for " + vehicleType);
     }
+
+    public void setPricingStrategy(PricingStrategy pricingStrategy) {
+        this.pricingStrategy = pricingStrategy;
+    }
 }

@@ -28,15 +28,15 @@ public class Game {
     }
 
     public void playGame() {
-        int currentPlayer = 0;
+        int currentPlayerIdx = 0;
         Player winner = null;
 
         while (winner == null) {
             int num = dice.roll();
-            Player current = players.get(currentPlayer);
+            Player current = players.get(currentPlayerIdx);
 
             if (current.getPosition() + num > board.getSize() * board.getSize() - 1) {
-                currentPlayer = (currentPlayer + 1) % players.size();
+                currentPlayerIdx = (currentPlayerIdx + 1) % players.size();
                 continue;
             }
 
@@ -56,7 +56,7 @@ public class Game {
                 winner = current;
             }
 
-            currentPlayer = (currentPlayer + 1) % players.size();
+            currentPlayerIdx = (currentPlayerIdx + 1) % players.size();
         }
 
         System.out.println("Winner is: " + winner.getName());

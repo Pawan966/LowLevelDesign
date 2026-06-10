@@ -1,0 +1,7 @@
+
+Design patterns are solutions to recurring design problems in software development.
+They provide a proven way to structure your code, making it more maintainable, reusable, and flexible.
+
+Creational: Provide various ways to create objects.
+Structural: Focus on how to assemble objects and classes into larger structures.
+Behavioral: Deal with communication and interaction between objects.

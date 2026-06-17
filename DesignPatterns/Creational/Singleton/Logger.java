@@ -50,6 +50,7 @@ public class Logger {
         private static final Logger INSTANCE = new Logger();
     }
 
+    // second time when getInstance is called then SingletonHolder will not get loaded and simple instance will be returned.
     public static Logger getInstance() {
         return SingletonHolder.INSTANCE;
     }
@@ -58,3 +59,11 @@ public class Logger {
         System.out.println("Logging: " + message);
     }
 }
+
+/*
+* Class Loading Happens When:
+✅ new keyword - Creating instance
+✅ Static method call - MyClass.method()
+✅ Static field access - MyClass.field (except compile-time constants)
+✅ Subclass loading - Parent loads first
+* */

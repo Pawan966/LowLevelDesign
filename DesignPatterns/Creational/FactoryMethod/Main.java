@@ -1,6 +1,8 @@
 package Creational.FactoryMethod;
 
-/* Superclass (abstract class or interface) defines a method for creating an object.
+/* It provides a interface for creating objects without specifying there concrete classes.
+
+   Superclass (abstract class or interface) defines a method for creating an object.
    At compile time which class object is needed is not known.
 */
 

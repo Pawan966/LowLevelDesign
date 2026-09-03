@@ -41,5 +41,9 @@ public class SplitwiseApplication {
         service.addExpense("g1", ExpenseType.EXACT, 500, "u2",  expenseSplits, new ExpenseMetadata("Food", null, "Goa"));
 
         service.showBalances();
+
+
     }
 }
+
+
